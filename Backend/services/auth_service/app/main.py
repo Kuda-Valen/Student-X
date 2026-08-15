@@ -20,7 +20,7 @@ app = FastAPI(
 )
 
 # ---- Schemas ----
-class UserRegistraterRequest(BaseModel):
+class UserRegisterRequest(BaseModel):
     email: EmailStr
     password: str
 
@@ -64,7 +64,7 @@ async def register_user(payload: UserRegisterRequest, db: Session = Depends(get_
 
 @app.post("/login", response_model=TokenResponse)
 async def login(
-    form_data: OAuth2PasswordRequestFrom = Depends(),
+    form_data: OAuth2PasswordRequestForm = Depends(),
     db: Session = Depends(get_db)
 ):
     """ Authenticates credentials and returns a JWT Bearer token"""

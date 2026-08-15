@@ -7,7 +7,7 @@ from sqlalchemy.orm import sessionmaker
 # Dedicated Auth Database connection string
 DATABASE_URL = os.getenv(
     "DATABASE_URL",
-    "postgresql://postgres:postgres@localhost:5432/auth_db"
+    "postgresql://user@localhost:5432/auth_db"
 )
 
 engine = create_engine(DATABASE_URL)
